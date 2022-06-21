@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+html,body{
+    width: 100%;
+    height: 100%;
+    margin:0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #f5f5f5;
+}
+.test {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.test svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 110px;
+    transform: rotateY(180deg);
+}
+
+.test .shape-fill {
+    fill: #D9DEE8;
+}
+
+.containers img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 10%;
+    margin-top: 30px;
+    display: flex;
+}
+.containers h1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 58%;
+    margin-top: 40px;
+    font-size: xxx-large;
+    font-family:Montserrat;
+    display: flex;
+}
+.line{
+    width: 50%;
+    height: 5px;
+    background-color: #3f60a0;
+    margin-top: 30px;
+    margin-left: 40%;
+    display: inline-block;
+}
+.bars{
+    display: flex;
+}
+.bars .text1{
+    margin-left: 10%;
+    font-family: Montserrat;
+}
+.bars .text2{
+    margin-left: 56%;
+    font-family: Montserrat;
+}
+
+.container .row .col{
+    margin-left: 5.5%;
+    margin-top: 3%;
+    margin-right: 6%;
+    width: 50px;
+    height: 100px;
+    border-radius: 1%;
+    background-color: #f5f5f5;
+    display: flex;
+}
+.container .row .col .gambar img {
+width: 80px;
+margin-top: 2%;
+border-radius: 50%;
+display: flex;
+}
+.container .row .col .gambar
+{
+    width: 80px;
+    margin-top: 2%;
+    border-radius: 50%;
+    display: inline-block;
+}
+.container .row .col .nama{
+    margin-top: 2%;
+    margin-left: 5%;
+    font-family: Montserrat;
+}
+.container .row .col .keterangan{
+    margin-top: 10%;
+    margin-left: 2%;
+    font-family: Montserrat;
+}
+.bottom-shape {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.bottom-shape svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 110px;
+    transform: rotateY(180deg);
+}
+
+.bottom-shape .shape-fill {
+    fill: #D9DEE8;
+}

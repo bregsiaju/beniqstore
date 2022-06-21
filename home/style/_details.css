@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
+}
+
+body {
+   width: 80%;
+   margin: 0 auto;
+   background-color: #f5f5f5;
+}
+
+section {
+   display: flex;
+   margin-top: 80px;
+   flex-direction: row;
+}
+
+.container {
+   margin-bottom: 20px;
+   margin-right: 50px;
+}
+
+.header {
+   margin: 20px 0 30px;
+   color: #3f60a0;
+}
+
+.gambar-produk img {
+   box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.5);
+   border-radius: 10px;
+   width: 300px;
+}
+
+.detail {
+   margin-top: 75px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+}
+
+.keterangan {
+   margin: 5px 0 10PX;
+   font-size: 14PX;
+}
+
+.harga {
+   font-size: 28px;
+   color:#129349;
+}
+
+hr {
+   margin: 10px 0;
+}
+
+.durasi, .deskripsi {
+   display: flex;
+   align-items: flex-start;
+   margin-bottom: 20px;
+}
+
+.fa-clock, .fa-circle-info {
+   margin-top: 5px;
+   margin-right: 10px;
+}
+
+.deskripsi p {
+   /* text-align: justify; */
+   margin-top: 5px;
+   padding-right: 15px;
+}
+
+.checkout {
+   display: flex;
+   justify-content: flex-end;
+}
+
+button {
+   padding: 10px;
+   background-color: #3f60a0;
+   color: white;
+   border-radius: 5px;
+   width: 150px;
+}
+
+button:hover {
+   cursor: pointer;
+   background-color: #129349;
+}
+
+.tombol button {
+   margin-bottom: 10px;
+}
+
+.ulasan {
+   display: flex;
+   flex-direction: column;
+   margin: 50px 0;
+}
+
+@media (max-width: 768px) {
+   section {
+      flex-wrap: wrap;
+   }
+
+   .container {
+      width: 100%;
+      margin-right: 0;
+   }
+
+   .container .gambar-produk {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+   }
+
+   .detail {
+      margin-top: 0;
+   }
+}

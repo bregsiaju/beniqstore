@@ -1,0 +1,18 @@
+body {
+   height: 800px;
+}
+
+.mt-5 {
+   margin-top:  6rem!important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.container-fluid a {
+   color: inherit;
+   text-decoration: none;
+}

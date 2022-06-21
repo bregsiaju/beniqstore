@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
+}
+
+a, a:visited, a:hover, a:active {
+   color: inherit;
+   text-decoration: none;
+}
+
+hr {
+   width: 85%;
+   margin: 0 auto;
+}
+
+body {
+   background-color: #f5f5f5;
+}
+
+body .header {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   margin-top: 80px;
+   align-items: center;
+   color: #162e5e;
+   margin-bottom: 25px;
+}
+
+.header i {
+   font-size: 25px;
+}
+
+.container {
+   width: 85%;
+   margin: 40px auto;
+   display: flex;
+   flex-direction: column;
+}
+
+.lokasi h3 {
+   font-size: 30px;
+   display: flex;
+   align-items: center;
+   margin: 5px 0;
+}
+
+.lokasi img {
+   width: 70px;
+   border-radius: 50%;
+   margin-right: 20px;
+}
+
+.searching {
+   display: flex;
+   width: 300px;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+}
+
+#keyword {
+   padding: 5px;
+   margin-right: 5px;
+   border-radius: 10px;
+}
+
+button.search {
+   border: none;
+   background-color: #f5f5f5;
+}
+
+button.search i {
+   color: #162e5e;
+}
+
+body .kategori {
+   margin-top: 25px;
+}
+
+.daftar-kategori button, .daftar-kategori a {
+   padding: 5px 10px;
+   margin: 10px 20px 10px 0;
+   box-shadow: 2px 2px 2px 1px #888;
+   border: 1px solid #162e5e;
+   border-radius: 8px;
+   width: auto;
+   display: flex;
+   justify-content: center;
+   display: inline-block;
+   font-size: 16px;
+}
+
+.daftar-kategori button:hover, .daftar-kategori a:hover {
+   background-color: #162e5e;
+   color: #f5f5f5;
+   cursor: pointer;
+}
+
+.catalog {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.produk {
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+   transition: 0.3s;
+   width: 250px;
+   border-radius: 5px;
+   margin: 0 20px 20px 0;
+   padding: 8px;
+   flex-direction: row;
+   background-color: white;
+}
+
+.produk img {
+   width: 100%;
+   /* position: relative; */
+   border-radius: 8px;
+}
+
+.produk-info {
+   padding: 10px 3px;
+   line-height: 19px;
+   display: flex;
+   flex-direction: column;
+}
+
+.produk:hover {
+   box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2);
+}
+
+.scrolling-wrapper {
+   overflow-x: scroll;
+   overflow-y: hidden;
+   white-space: nowrap;
+}
+
+.footer {
+   /* height: 250px; */
+   background-color: #162e5e;
+   margin-top: 100px;
+}
+
+.footer-content {
+   width: 85%;
+   margin: 0 auto;
+   display: flex;
+   color: #f5f5f5;
+   justify-content: space-between;
+   align-items: flex-start;
+   padding: 30px 0;
+   flex-wrap: wrap;
+}
+
+.footer .logo {
+   display: block;
+   width: 150px;
+}
+
+.list:last-of-type {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-top: -18px;
+}
+
+.list ul li {
+   list-style-type: none;
+}
