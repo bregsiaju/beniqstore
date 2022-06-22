@@ -44,16 +44,13 @@ if (isset($_POST["hiasan"])) {
    <title>Home</title>
 
    <!-- css -->
-   <link rel="stylesheet" href="style/home.css">
+   <link rel="stylesheet" href="style/menu.css">
    <link rel="stylesheet" href="style/shape.css">
    <!-- kit icon -->
    <script src="https://kit.fontawesome.com/ecde83b210.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-   <!-- navbar -->
-
-   <!-- end navbar -->
    <!-- background flow -->
    <div class="top-shape">
       <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -80,7 +77,7 @@ if (isset($_POST["hiasan"])) {
             <button class="search" type="submit" name="search"><i class="fa-solid fa-magnifying-glass"></i></button>
          </form>
          <div class="cart-notif">
-            <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="checkout/keranjang.php"><i class="fa-solid fa-cart-shopping"></i></a>
             &nbsp;&nbsp;
             <a href=""><i class="fa-solid fa-bell"></i></a>
          </div>
@@ -88,6 +85,30 @@ if (isset($_POST["hiasan"])) {
    </div>
    <!-- end header -->
    <hr>
+   <!-- slider banner -->
+   <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+         <div class="carousel-item active" data-bs-interval="10000">
+            <img src="..." class="d-block w-100" alt="...">
+         </div>
+         <div class="carousel-item" data-bs-interval="2000">
+            <img src="..." class="d-block w-100" alt="...">
+         </div>
+         <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="...">
+         </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+         <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+         <span class="visually-hidden">Next</span>
+      </button>
+   </div>
+   <!-- end slider banner -->
+
    <!-- daftar kategori -->
    <div class="kategori container">
       <h3>Kategori Produk</h3>
@@ -126,10 +147,13 @@ if (isset($_POST["hiasan"])) {
                   <h4><?= $data['nama_produk']; ?></h4>
                   <br>
                   <p class="harga">Rp<?= number_format($data['harga'],  0, '', '.'); ?></p>
+                  <div class="co">
+                     <a href="checkout/beli.php?id=<?php echo $data['id_produk'] ?>" class="checkout"><i class="fa-solid fa-cart-shopping"></i>Pesan</a>
+                  </div>
                </div>
             </div>
          <?php endforeach; ?>
-      </div>
+      </div>ss
    </div>
    <!-- end daftar produk -->
 

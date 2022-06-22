@@ -79,8 +79,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
          <!-- checkout -->
          <div class="checkout">
             <div class="tombol">
-               <a href=""><button><i class="fa-solid fa-message"></i> Chat penjahit</button></a>
-               <a href=""><button><i class="fa-solid fa-cart-shopping"></i> Pesan sekarang</button></a>
+               <a href="https://api.whatsapp.com/send?phone=62895703340802&text=Hallo%20Kak"><button><i class="fa-solid fa-message"></i> Chat penjahit</button></a>
+               <a href="checkout/beli.php?id=<?php echo $data['id_produk'] ?>"><button><i class="fa-solid fa-cart-shopping"></i> Pesan sekarang</button></a>
             </div>
          </div>
          <!-- end checkout -->
