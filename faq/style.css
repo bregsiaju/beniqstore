@@ -1,61 +1,61 @@
- body{
-        background-color:#DCDCDC;
-        font-family: monospace;
-      }
-  img{
-      margin-left: 220px;
-      border-radius: 50%;
-      margin-top: 200px;
-  }
-      .header{
-        margin-top: -300px;
-        padding: 10px 0px;
-        background: grey;
-        color: #fff;
-        width: 500px;
-        display: flex;
-        align-content: center;
-        justify-content: center;
-      }
-      .faq-item{
-        margin-bottom: 10px;
-        margin-top: 10px;
-        width: 500px;
-      }
-      .faq-body{
-        display: none;
-        margin-top: 30px;
-        width: 400px;
-        font-size: 12px;
-      }
-      .faq-wrapper{
-        width: 75%;
-        margin: auto;
-        margin-right: 110px;
-        width: 500px;
-      }
-      .faq-inner{
-        padding: 30px;
-        background: aliceblue;
-        width: 500px;
-      }
-      .faq-plus{
-        float: right;
-        font-size: 1.4em;
-        line-height: 1em;
-        cursor: pointer;
-        width: 100px;
-      }
-      hr{
-        background-color: #9b9b9b;
-      }
-      h3{
-                font-size: 12px;
-      }
-      .tambah{
-        font-size: 20px;
-        text-align: right;
-        width: 700px;
-        margin: auto;
-        margin-right: 115px;
-      }
+body {
+   background-color:#DCDCDC;
+   font-family: monospace;
+}
+img {
+   margin-left: 220px;
+   border-radius: 50%;
+   margin-top: 200px;
+}
+.header{
+   margin-top: -300px;
+   padding: 10px 0px;
+   background: grey;
+   color: #fff;
+   width: 500px;
+   display: flex;
+   align-content: center;
+   justify-content: center;
+}
+.faq-item{
+   margin-bottom: 10px;
+   margin-top: 10px;
+   width: 500px;
+}
+.faq-body{
+   display: none;
+   margin-top: 30px;
+   width: 400px;
+   font-size: 12px;
+}
+.faq-wrapper{
+   width: 75%;
+   margin: auto;
+   margin-right: 110px;
+   width: 500px;
+}
+.faq-inner{
+   padding: 30px;
+   background: aliceblue;
+   width: 500px;
+}
+.faq-plus{
+   float: right;
+   font-size: 1.4em;
+   line-height: 1em;
+   cursor: pointer;
+   width: 100px;
+}
+hr{
+   background-color: #9b9b9b;
+}
+h3{
+            font-size: 12px;
+}
+.tambah{
+   font-size: 20px;
+   text-align: right;
+   width: 700px;
+   margin: auto;
+   margin-right: 115px;
+}

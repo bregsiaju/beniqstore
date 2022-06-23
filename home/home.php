@@ -172,7 +172,7 @@ if (isset($_POST["hiasan"])) {
             <br>
             <ul>
                <li><a href="">Tentang Kami</a></li>
-               <li><a href="">FAQ</a></li>
+               <li><a href="../FAQ">FAQ</a></li>
                <li><a href="">Hubungi Kami</a></li>
             </ul>
          </div>

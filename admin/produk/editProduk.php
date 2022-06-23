@@ -1,6 +1,6 @@
 <?php
 
-include("../conn.php");
+include("../../conn.php");
 
 $status = '';
 $result = '';
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    } else {
       $status = 'err';
    }
-   header('Location: index.php?status=' . $status);
+   header('Location: ../index.php?status=' . $status);
 }
 
 ?>
@@ -50,16 +50,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    <title>Tambah Produk</title>
 
    <!-- CSS Boostrap -->
-   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
    <!-- myCSS -->
-   <link rel="stylesheet" href="../assets/css/mycss.css">
+   <link rel="stylesheet" href="../../assets/css/mycss.css">
 </head>
 
 <body>
-   <nav class="navbar navbar-dark fixed-top" style="background-color: #3f60a0;">
+   <nav class="navbar                             n   navbar-dark fixed-top" style="background-color: #3f60a0;">
       <div class="container-fluid px-5">
-         <h5 class="text-white"><a href="index.php">Kelola Produk</a> > Ubah Info Produk</h5>
-         <a href="../logout.php"><button class="btn btn-outline-light" type="submit">Logout</button></a>
+         <h5 class="text-white"><a href="../index.php">Kelola Produk</a> > Ubah Info Produk</h5>
+         <a href="../../logout.php"><button class="btn btn-outline-light" type="submit">Logout</button></a>
       </div>
    </nav>
    <div class="container mt-5 d-flex justify-content-center">
@@ -112,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    </div>
 
    <!-- JS Bootstrap -->
-   <script src="../assets/css/bootstrap.bundle.min.js"></script>
+   <script src="../../assets/css/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

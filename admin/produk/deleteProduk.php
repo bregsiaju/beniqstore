@@ -1,6 +1,6 @@
 <?php
 
-include("../conn.php");
+include("../../conn.php");
 
 $status = '';
 $result = '';
@@ -21,6 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
       }
 
       //redirect ke halaman lain
-      header('Location: index.php?status=' . $status);
+      header('Location: ../index.php?status=' . $status);
    }
 }

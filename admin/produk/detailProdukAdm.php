@@ -1,5 +1,5 @@
 <?php
-include("../conn.php");
+include("../../conn.php");
 
 $result = '';
 //melakukan pengecekan apakah ada variable GET yang dikirim
@@ -25,16 +25,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
    <title>Detail Produk</title>
 
    <!-- bootstrap css -->
-   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
    <!-- myCSS -->
-   <link rel="stylesheet" href="../assets/css/mycss.css">
+   <link rel="stylesheet" href="../../assets/css/mycss.css">
 </head>
 
 <body>
    <nav class="navbar navbar-dark fixed-top" style="background-color: #3f60a0;">
       <div class="container-fluid px-5">
-         <h5 class="text-white"><a href="index.php">Kelola Produk</a> > Detail Produk</h5>
-         <a href="../logout.php"><button class="btn btn-outline-light" type="submit">Logout</button></a>
+         <h5 class="text-white"><a href="../index.php">Kelola Produk</a> > Detail Produk</h5>
+         <a href="../../logout.php"><button class="btn btn-outline-light" type="submit">Logout</button></a>
       </div>
    </nav>
    <div class="container mt-5 d-flex justify-content-center">
@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                <?php foreach ($result as $data) : ?>
                   <div class="row g-0">
                      <div class="col-md-4">
-                        <img src="../home/assets/<?= $data['gambar_produk'] ?>" class="img-fluid rounded" alt="gambar produk">
+                        <img src="../../home/assets/<?= $data['gambar_produk'] ?>" class="img-fluid rounded" alt="gambar produk">
                      </div>
                      <div class="col-md-8">
                         <div class="card-body">
@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
    </div>
 
    <!-- script bootstrap -->
-   <script src="../assets/css/bootstrap.bundle.min.js"></script>
+   <script src="../../assets/css/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

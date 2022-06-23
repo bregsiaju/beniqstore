@@ -39,6 +39,9 @@ $result = query("SELECT * FROM produk")
                <li class="nav-item">
                   <a class="nav-link" href="#">Kelola Pesanan</a>
                </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="faq/FAQ.php">Kelola FAQs</a>
+               </li>
             </ul>
             <div class="d-flex">
                <a href="../logout.php"><button class="btn btn-outline-light" type="submit">Logout</button></a>
@@ -47,8 +50,8 @@ $result = query("SELECT * FROM produk")
       </div>
    </nav>
    <div class="container mt-5 mb-5">
-      <a href="addProduk.php"><button type="button" class="btn btn-success mt-5">+ Tambah Produk Baru</button></a>
-      <table class="table table-bordered mt-4 text-center align-middle">
+      <a href="produk/addProduk.php"><button type="button" class="btn btn-success mt-5">+ Tambah Produk Baru</button></a>
+      <table class="table table-bordered mt-4 text-center align-middle table-hover">
          <thead>
             <th>ID Produk</th>
             <th>Foto Produk</th>
@@ -65,12 +68,12 @@ $result = query("SELECT * FROM produk")
                      <img src=" ../home/assets/<?= $data['gambar_produk']; ?>" width="100px" alt="Gambar <?= $data['nama_produk']; ?>">
                   </td>
                   <td class="text-start"><?= $data['nama_produk']; ?></td>
-                  <td><?= $data['harga']; ?></td>
+                  <td><?= number_format($data['harga'],  0, '', '.'); ?></td>
                   <td><?= $data['kategori']; ?></td>
                   <td>
-                     <a href="<?= "detailProdukAdm.php?id_produk=" . $data['id_produk']; ?>" class="mb-1"><button type="button" class="btn btn-outline-info">detail</button></a>
-                     <a href="<?= "editProduk.php?id_produk=" . $data['id_produk']; ?>" class="mb-1"><button type="button" class="btn btn-outline-warning">ubah</button></a>
-                     <a href="<?= "deleteproduk.php?id_produk=" . $data['id_produk']; ?>" onclick="return confirm('Apakah Anda yakin menghapus produk?')"><button type=" button" class="btn btn-outline-danger">hapus</button></a>
+                     <a href="<?= "produk/detailProdukAdm.php?id_produk=" . $data['id_produk']; ?>" class="mb-1"><button type="button" class="btn btn-outline-info">detail</button></a>
+                     <a href="<?= "produk/editProduk.php?id_produk=" . $data['id_produk']; ?>" class="mb-1"><button type="button" class="btn btn-outline-warning">ubah</button></a>
+                     <a href="<?= "produk/deleteproduk.php?id_produk=" . $data['id_produk']; ?>" onclick="return confirm('Apakah Anda yakin menghapus produk?')"><button type=" button" class="btn btn-outline-danger">hapus</button></a>
                   </td>
                </tr>
             <?php endforeach; ?>
