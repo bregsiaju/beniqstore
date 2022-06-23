@@ -48,23 +48,22 @@ require '../../conn.php';
                                     <div class="d-flex justify-content-between">
                                        <div class="d-flex flex-row align-items-center">
                                           <div>
-
-                                             <img src="../assets/<?php echo $pecah['gambar_produk']; ?>" class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
+                                             <img src="../assets/<?= $pecah['gambar_produk']; ?>" class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
                                           </div>
                                           <div class="ms-4">
-                                             <h5><?php echo $pecah['nama_produk']; ?></h5>
-                                             <p class="small mb-0"><?php echo $pecah['kategori']; ?></p>
+                                             <h5><?= $pecah['nama_produk']; ?></h5>
+                                             <p class="small mb-0"><?= $pecah['kategori']; ?></p>
                                           </div>
                                        </div>
                                        <div class="d-flex flex-row align-items-center">
                                           <div style="width: 50px;">
-                                             <h5 class="fw-normal mb-0"><?php echo $jumlah; ?></h5>
+                                             <h5 class="fw-normal mb-0"><?= $jumlah; ?></h5>
                                           </div>
                                           <div style="width: 80px;">
-                                             <h7 class="mb-0"><?php echo number_format($subharga); ?></h7>
+                                             <h7 class="mb-0"><?= number_format($subharga,  0, '', '.'); ?></h7>
                                           </div>
                                           <div style="width: 40px;">
-                                             <a href="hapuskeranjang.php?id=<?php echo $id_produk ?>" class="btn btn-danger btn-xs">X</a>
+                                             <a href="hapuskeranjang.php?id=<?= $id_produk ?>" class="btn btn-danger btn-xs">X</a>
                                           </div>
                                        </div>
                                     </div>

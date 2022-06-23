@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn = mysqli_connect('localhost', 'root', '', 'beniq_db');
+include("../../conn.php");
 
 if (!isset($_SESSION['pelanggan'])) {
    echo "<script>alert('error');</script>";
@@ -58,19 +58,19 @@ if (!isset($_SESSION['pelanggan'])) {
                                     <div class="d-flex justify-content-between">
                                        <div class="d-flex flex-row align-items-center">
                                           <div>
-                                             <img src="../assets/<?php echo $pecah['gambar_produk']; ?>" class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
+                                             <img src="../assets/<?= $pecah['gambar_produk']; ?>" class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
                                           </div>
                                           <div class="ms-4">
-                                             <h5><?php echo $pecah['nama_produk']; ?></h5>
-                                             <p class="small mb-0"><?php echo $pecah['kategori']; ?></p>
+                                             <h5><?= $pecah['nama_produk']; ?></h5>
+                                             <p class="small mb-0"><?= $pecah['kategori']; ?></p>
                                           </div>
                                        </div>
                                        <div class="d-flex flex-row align-items-center">
                                           <div style="width: 50px;">
-                                             <h5 class="fw-normal mb-0"><?php echo $jumlah; ?></h5>
+                                             <h5 class="fw-normal mb-0"><?= $jumlah; ?></h5>
                                           </div>
                                           <div style="width: 80px;">
-                                             <h7 class="mb-0"><?php echo number_format($subharga); ?></h7>
+                                             <h7 class="mb-0"><?= number_format($subharga,  0, '', '.'); ?></h7>
                                           </div>
                                        </div>
                                     </div>
@@ -90,12 +90,12 @@ if (!isset($_SESSION['pelanggan'])) {
                                  <form method="post" class="mt-4">
                                     <div class="form-outline form-white mb-4">
                                        <label class="form-label" for="typeName">Nama Penerima</label>
-                                       <input type="text" id="typeName" class="form-control form-control-lg" readonly value="<?php echo $_SESSION['users']['full_name']; ?>">
+                                       <input type="text" id="typeName" class="form-control form-control-lg" value="<?php echo $_SESSION['users']['full_name']; ?>">
                                     </div>
 
                                     <div class="form-outline form-white mb-4">
                                        <label class="form-label" for="typeText">HP</label>
-                                       <input type="text" id="typeText" class="form-control form-control-lg" readonly value="<?php echo $_SESSION['users']['password']; ?>">
+                                       <input type="text" id="typeText" class="form-control form-control-lg" value="<?php echo $_SESSION['users']['hp']; ?>">
                                     </div>
                                  </form>
 

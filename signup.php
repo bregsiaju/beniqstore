@@ -11,12 +11,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
    $user_name = $_POST['user_name'];
    $password = $_POST['password'];
    $image = $_POST['image'];
+   $hp = $_POST['hp'];
+   $alamat = $_POST['alamat'];
 
    if (!empty($full_name) && !empty($user_name) && !empty($password) && !empty($image) && !is_numeric($user_name)) {
 
       //save to database
       $user_id = random_num(10);
-      $query = "INSERT INTO users (user_id, full_name, user_name, password, image) values ('$user_id', '$full_name', '$user_name','$password','$image')";
+      $query = "INSERT INTO users (user_id, full_name, user_name, password, image, hp, alamat) VALUES ('$user_id', '$full_name', '$user_name','$password','$image', '$hp', '$alamat')";
 
       mysqli_query($con, $query);
 
@@ -53,6 +55,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <input type="text" name="full_name" placeholder="Full Name" required autocomplete="off" autofocus><br>
             <input type="text" name="user_name" placeholder="Username" required autocomplete="off"><br>
             <input type="password" name="password" placeholder="Password" required autocomplete="off"><br>
+            <input type="text" name="hp" placeholder="No Telp (08xxxx)" required autocomplete="off"><br>
+            <input type="text" name="alamat" placeholder="Address" required autocomplete="off"><br>
             <input type="file" name="image" accept=".png,.gif,.jpg" id="image" required><br>
             <p>By continuing, you agree with out Term & Conditions and Privacy Policy.</p>
             <button id="button" type="submit">Sign Up</button>

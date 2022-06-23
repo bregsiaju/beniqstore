@@ -44,13 +44,15 @@ if (isset($_POST["hiasan"])) {
    <title>Home</title>
 
    <!-- css -->
-   <link rel="stylesheet" href="style/menu.css">
+   <link rel="stylesheet" href="style/home.css">
    <link rel="stylesheet" href="style/shape.css">
+   <link rel="stylesheet" href="style/slide.css">
+
    <!-- kit icon -->
    <script src="https://kit.fontawesome.com/ecde83b210.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body id="home">
    <!-- background flow -->
    <div class="top-shape">
       <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -62,7 +64,7 @@ if (isset($_POST["hiasan"])) {
    <!-- end background flow -->
 
    <!-- header -->
-   <div class="container header">
+   <div class="part header">
       <div class="lokasi">
          <h2>Selamat Datang, </h2>
          <h3>
@@ -79,38 +81,42 @@ if (isset($_POST["hiasan"])) {
          <div class="cart-notif">
             <a href="checkout/keranjang.php"><i class="fa-solid fa-cart-shopping"></i></a>
             &nbsp;&nbsp;
-            <a href=""><i class="fa-solid fa-bell"></i></a>
+            <a href=""><i class="fa-solid fa-circle-user"></i></a>
          </div>
       </div>
    </div>
    <!-- end header -->
-   <hr>
+   <hr><br>
    <!-- slider banner -->
-   <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-         <div class="carousel-item active" data-bs-interval="10000">
-            <img src="..." class="d-block w-100" alt="...">
-         </div>
-         <div class="carousel-item" data-bs-interval="2000">
-            <img src="..." class="d-block w-100" alt="...">
+   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner d-flex justify-content-around">
+         <div class="carousel-item active">
+            <a href=""><img src="../assets/img/banner1.png" class="w-50 rounded-3 " alt="banner promo"></a>
          </div>
          <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
+            <a href=""><img src="../assets/img/banner2.png" class="w-50 rounded-3 " alt="banner promo"></a>
+         </div>
+         <div class="carousel-item">
+            <a href=""><img src="../assets/img/banner2.jpg" class="w-50 rounded-3 " alt="banner promo"></a>
+         </div>
+         <div class="carousel-item">
+            <a href=""><img src="../assets/img/banner3.jpg" class="w-50 rounded-3 " alt="banner promo"></a>
          </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
          <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
          <span class="carousel-control-next-icon" aria-hidden="true"></span>
          <span class="visually-hidden">Next</span>
       </button>
    </div>
    <!-- end slider banner -->
-
+   <br>
+   <hr>
    <!-- daftar kategori -->
-   <div class="kategori container">
+   <div class="kategori part">
       <h3>Kategori Produk</h3>
       <div class="daftar-kategori scrolling-wrapper">
          <form action="" method="POST">
@@ -136,7 +142,7 @@ if (isset($_POST["hiasan"])) {
    <!-- end daftar kategori -->
 
    <!-- daftar produk -->
-   <div class="container">
+   <div class="part">
       <div class="catalog">
          <?php foreach ($result as $data) : ?>
             <div class="produk">
@@ -153,7 +159,7 @@ if (isset($_POST["hiasan"])) {
                </div>
             </div>
          <?php endforeach; ?>
-      </div>ss
+      </div>
    </div>
    <!-- end daftar produk -->
 
@@ -186,6 +192,9 @@ if (isset($_POST["hiasan"])) {
       </div>
    </div>
    <!-- end footer -->
+
+   <!-- script -->
+   <script src="../assets/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

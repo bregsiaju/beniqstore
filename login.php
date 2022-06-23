@@ -10,6 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
    //something was posted
    $user_name = $_POST['user_name'];
    $password = $_POST['password'];
+   $ambil = $con->query("SELECT * FROM users WHERE user_name = '$user_name' AND password = '$password'");
 
    if (!empty($user_name) && !empty($password) && !is_numeric($user_name)) {
 
@@ -27,8 +28,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                header("Location: admin/index.php");
             } elseif ($user_data['password'] === $password) {
                $_SESSION['user_id'] = $user_data['user_id'];
+               $akun = $ambil->fetch_assoc();
+               $_SESSION['pelanggan'] = $akun;
+               $_SESSION['users'] = $akun;
                header("Location: home/home.php");
             }
+            echo "wrong username or password!";
          }
          die;
       }
