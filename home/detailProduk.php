@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             <h2>Detail Produk</h2>
          </div>
          <div class="gambar-produk">
-            <img src="assets/<?= $data['gambar_produk']; ?>" alt="gambar produk">
+            <img src="img/<?= $data['gambar_produk']; ?>" alt="gambar produk">
          </div>
       </div>
       <!-- detail produk -->

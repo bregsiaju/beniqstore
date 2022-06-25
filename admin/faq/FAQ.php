@@ -35,7 +35,7 @@ $result = query("SELECT * FROM faq");
                </li>
             </ul>
             <div class="d-flex">
-               <a href="../logout.php"><button class="btn btn-outline-light" type="submit">Logout</button></a>
+               <a href="../../logout.php"><button class="btn btn-outline-light" type="submit">Logout</button></a>
             </div>
          </div>
       </div>

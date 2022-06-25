@@ -65,7 +65,7 @@ $result = query("SELECT * FROM produk")
                <tr>
                   <td><?= $data['id_produk']; ?></td>
                   <td>
-                     <img src=" ../home/assets/<?= $data['gambar_produk']; ?>" width="100px" alt="Gambar <?= $data['nama_produk']; ?>">
+                     <img src=" ../home/img/<?= $data['gambar_produk']; ?>" width="100px" alt="Gambar <?= $data['nama_produk']; ?>">
                   </td>
                   <td class="text-start"><?= $data['nama_produk']; ?></td>
                   <td><?= number_format($data['harga'],  0, '', '.'); ?></td>

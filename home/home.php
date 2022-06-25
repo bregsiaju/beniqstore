@@ -69,7 +69,7 @@ if (isset($_POST["hiasan"])) {
          <h2>Selamat Datang, </h2>
          <h3>
             <img src="../assets/img/users/<?= $user_data['image']; ?>" alt="foto profil">
-            <?= $user_data['full_name']; ?> ❤
+            <?= $user_data['full_name']; ?>
          </h3>
          <a href="../logout.php">Logout</a>
       </div>
@@ -81,7 +81,7 @@ if (isset($_POST["hiasan"])) {
          <div class="cart-notif">
             <a href="checkout/keranjang.php"><i class="fa-solid fa-cart-shopping"></i></a>
             &nbsp;&nbsp;
-            <a href=""><i class="fa-solid fa-circle-user"></i></a>
+            <a href="<?= "../profil/profil.php?user_id=" . $user_data['user_id']; ?>"><i class=" fa-solid fa-circle-user"></i></a>
          </div>
       </div>
    </div>
@@ -95,12 +95,6 @@ if (isset($_POST["hiasan"])) {
          </div>
          <div class="carousel-item">
             <a href=""><img src="../assets/img/banner2.png" class="w-50 rounded-3 " alt="banner promo"></a>
-         </div>
-         <div class="carousel-item">
-            <a href=""><img src="../assets/img/banner2.jpg" class="w-50 rounded-3 " alt="banner promo"></a>
-         </div>
-         <div class="carousel-item">
-            <a href=""><img src="../assets/img/banner3.jpg" class="w-50 rounded-3 " alt="banner promo"></a>
          </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -147,7 +141,7 @@ if (isset($_POST["hiasan"])) {
          <?php foreach ($result as $data) : ?>
             <div class="produk">
                <a href="<?= "detailProduk.php?id_produk=" . $data['id_produk']; ?>">
-                  <img src="assets/<?= $data['gambar_produk']; ?>" alt="Foto produk">
+                  <img src="img/<?= $data['gambar_produk']; ?>" alt="Foto produk">
                </a>
                <div class="produk-info">
                   <h4><?= $data['nama_produk']; ?></h4>
@@ -171,9 +165,9 @@ if (isset($_POST["hiasan"])) {
             <p>Create your own style.</p>
             <br>
             <ul>
-               <li><a href="">Tentang Kami</a></li>
-               <li><a href="../FAQ">FAQ</a></li>
-               <li><a href="">Hubungi Kami</a></li>
+               <li><a href="about.php">Tentang Kami</a></li>
+               <li><a href="../FAQ/">FAQ</a></li>
+               <li><a href="https://api.whatsapp.com/send?phone=62895703340802&text=Hallo%20Kak">Hubungi Kami</a></li>
             </ul>
          </div>
          <div class="list">

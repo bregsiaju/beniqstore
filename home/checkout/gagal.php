@@ -1,7 +1,12 @@
 <?php
 session_start();
-require '../../conn.php';
+include("../../conn.php");
 
+
+if (!isset($_SESSION['pelanggan'])) {
+   echo "<script>alert('error');</script>";
+   echo "<script>location='../../login.php';</script>";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,37 +15,46 @@ require '../../conn.php';
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Keranjang</title>
+   <title>Resi</title>
 
-   <!-- CSS -->
+   <!-- css -->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
    <link rel="stylesheet" href="../../assets/css/custom.css">
    <!-- kit icon -->
    <script src="https://kit.fontawesome.com/ecde83b210.js" crossorigin="anonymous"></script>
+   <!-- Jquery -->
+   <script src="../../assets/js/jquery-3.6.0.min.js"></script>
+   <link rel="stylesheet" href="../style/print.css" media="print">
 </head>
 
 <body>
+   <script src="https://www.paypal.com/sdk/js?client-id=AfA2E9dq-AsFiL7_fZKqTR0R_BUx8lqZErrChqQqsI4ScQ2oOd4p3ofCdjNWoBalAH7rX3MFrgzgZpVG&currency=USD"></script>
    <section class="h-100 h-custom" style="background-color: #eee;">
       <div class="container py-5 h-100">
          <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col">
                <div class="card">
                   <div class="card-body p-4">
+
                      <div class="row">
+
                         <div class="col-lg-7">
-                           <h5 class="mb-3"><a href="../home.php" class="text-body"><i class="fa-solid fa-arrow-left-long"></i> Continue Shopping</a></h5>
+                           <h5 class="mb-3" class="text-body"><i class="fa-solid fa"></i></i> BeniqStore Resi </a>
+                           </h5>
                            <hr>
                            <div class='d-flex justify-content-between align-items-center mb-4'>
                               <div>
-                                 <p class='mb-1'>Shopping Cart Anda</p>
+                                 <p class='mb-1'>Daftar Pembelian Anda</p>
                               </div>
                            </div>
+                           <?php $totalbelanja = 0; ?>
                            <?php foreach ($_SESSION["keranjang"] as $id_produk => $jumlah) : ?>
                               <!-- Menampilkan produk berdasarkan id_produk -->
                               <?php
                               $ambil = $conn->query("SELECT * FROM produk WHERE id_produk='$id_produk'");
                               $pecah = $ambil->fetch_assoc();
                               $subharga = $pecah['harga'] * $jumlah;
+
                               ?>
 
                               <div class="card mb-3">
@@ -62,32 +76,39 @@ require '../../conn.php';
                                           <div style="width: 80px;">
                                              <h7 class="mb-0"><?= number_format($subharga,  0, '', '.'); ?></h7>
                                           </div>
-                                          <div style="width: 40px;">
-                                             <a href="hapuskeranjang.php?id=<?= $id_produk ?>" class="btn btn-danger btn-xs">X</a>
-                                          </div>
                                        </div>
                                     </div>
                                  </div>
                               </div>
+                              <?php $totalbelanja += $subharga; ?>
                            <?php endforeach ?>
                         </div>
+
                         <div class="col-lg-5">
                            <div class="card bg-custom text-white rounded-3">
                               <div class="card-body">
                                  <div class="d-flex justify-content-between align-items-center mb-4">
-                                    <h5 class="mb-0">Supported by UPN Veteran Jatim</h5>
+                                    <h5 class="mb-0">Pembayaran Gagal</h5>
                                  </div>
                                  <hr class="my-4">
+                                 <form method="post" class="mt-4">
+                                    <div class="form-outline form-white mb-4">
+                                       <label class="form-label" for="typeName">Nama Penerima</label>
+                                       <input type="text" id="typeName" class="form-control form-control-lg" value="<?php echo $_SESSION['users']['full_name']; ?>">
+                                    </div>
 
-                                 <img src="../../assets/img/logo.png" alt="logo" style="width: 400px;">
+                                    <div class="form-outline form-white mb-4">
+                                       <label class="form-label" for="typeText">HP</label>
+                                       <input type="text" id="typeText" class="form-control form-control-lg" value="<?php echo $_SESSION['users']['hp']; ?>">
+                                    </div>
+                                 </form>
+
+                                 <hr class="my-4">
+                                 <label class="form-label" for="typeText">Total Belanja : </label>
+                                 <label class="form-label" for="typeText">Rp<?php echo number_format($totalbelanja, 0, '', '.') ?> </label><br>
 
                                  <hr class="my-4">
 
-                                 <a href="checkout.php">
-                                    <button type="button" class="btn btn-outline-light btn-block btn-lg">
-                                       <span>Checkout <i class="fa-solid fa-arrow-right-long"></i></span>
-                                    </button>
-                                 </a>
                               </div>
                            </div>
                         </div>

@@ -21,10 +21,6 @@ body {
    background-color: #f5f5f5;
 }
 
-#home body {
-   font-family: 'Poppins', sans-serif;
-}
-
 body .header {
    display: flex;
    flex-direction: row;
@@ -59,7 +55,7 @@ body .header {
    margin-right: 20px;
 }
 
-#home .searching {
+.searching {
    display: flex;
    width: 300px;
    flex-direction: row;

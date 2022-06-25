@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                <?php foreach ($result as $data) : ?>
                   <div class="row g-0">
                      <div class="col-md-4">
-                        <img src="../../home/assets/<?= $data['gambar_produk'] ?>" class="img-fluid rounded" alt="gambar produk">
+                        <img src="../../home/img/<?= $data['gambar_produk'] ?>" class="img-fluid rounded" alt="gambar produk">
                      </div>
                      <div class="col-md-8">
                         <div class="card-body">

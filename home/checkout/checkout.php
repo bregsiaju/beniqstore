@@ -2,6 +2,7 @@
 session_start();
 include("../../conn.php");
 
+
 if (!isset($_SESSION['pelanggan'])) {
    echo "<script>alert('error');</script>";
    echo "<script>location='../../login.php';</script>";
@@ -21,6 +22,9 @@ if (!isset($_SESSION['pelanggan'])) {
    <link rel="stylesheet" href="../../assets/css/custom.css">
    <!-- kit icon -->
    <script src="https://kit.fontawesome.com/ecde83b210.js" crossorigin="anonymous"></script>
+   <!-- Jquery -->
+   <script src="../../assets/js/jquery-3.6.0.min.js"></script>
+   <script src="../../assets/js/storage.js"></script>
 </head>
 
 <body>
@@ -58,7 +62,7 @@ if (!isset($_SESSION['pelanggan'])) {
                                     <div class="d-flex justify-content-between">
                                        <div class="d-flex flex-row align-items-center">
                                           <div>
-                                             <img src="../assets/<?= $pecah['gambar_produk']; ?>" class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
+                                             <img src="../img/<?= $pecah['gambar_produk']; ?>" class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
                                           </div>
                                           <div class="ms-4">
                                              <h5><?= $pecah['nama_produk']; ?></h5>
@@ -78,6 +82,95 @@ if (!isset($_SESSION['pelanggan'])) {
                               </div>
                               <?php $totalbelanja += $subharga; ?>
                            <?php endforeach ?>
+
+                           <div class="mt-4">
+                              <h5>Pilih opsi pengiriman</h5>
+                           </div>
+
+                           <?php
+                           //Get Data Provinsi
+                           $curl = curl_init();
+
+                           curl_setopt_array($curl, array(
+                              CURLOPT_URL => "https://api.rajaongkir.com/starter/province",
+                              CURLOPT_RETURNTRANSFER => true,
+                              CURLOPT_ENCODING => "",
+                              CURLOPT_MAXREDIRS => 10,
+                              CURLOPT_TIMEOUT => 30,
+                              CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                              CURLOPT_CUSTOMREQUEST => "GET",
+                              CURLOPT_HTTPHEADER => array(
+                                 "key:d42c6a6b7db90bdf7699ac3b3b678cff"
+                              ),
+                           ));
+
+                           $response = curl_exec($curl);
+                           $err = curl_error($curl);
+                           ?>
+                           <label>Provinsi</label><br>
+                           <select name='provinsi' id='provinsi' class="form-control">";
+                              <option>Pilih Provinsi</option>
+                              <?php
+                              $get = json_decode($response, true);
+                              for ($i = 0; $i < count($get['rajaongkir']['results']); $i++) :
+                              ?>
+                                 <option value="<?php echo $get['rajaongkir']['results'][$i]['province_id']; ?>"><?php echo $get['rajaongkir']['results'][$i]['province']; ?></option>
+                              <?php endfor; ?>
+                           </select><br>
+
+                           <label>Kabupaten</label><br>
+                           <select id="kabupaten" name="kabupaten" class="form-control">
+                              <!-- Data kabupaten akan diload menggunakan AJAX -->
+                           </select> <br>
+
+                           <label>Kurir</label><br>
+                           <select class="form-control" id="kurir" name="kurir">
+                              <option value="">Pilih Kurir</option>
+                              <option value="jne">JNE</option>
+                              <option value="tiki">TIKI</option>
+                              <option value="pos">POS INDONESIA</option>
+                           </select>
+
+                           <div id="tampil_ongkir"> </div>
+
+                           <script>
+                              $('#provinsi').change(function() {
+
+                                 //Mengambil value dari option select provinsi kemudian parameternya dikirim menggunakan ajax
+                                 var prov = $('#provinsi').val();
+                                 var nama_provinsi = $(this).attr("nama_provinsi");
+                                 $.ajax({
+                                    type: 'GET',
+                                    url: 'ambil-kabupaten.php',
+                                    data: 'prov_id=' + prov,
+                                    success: function(data) {
+                                       //jika data berhasil didapatkan, tampilkan ke dalam option select kabupaten
+                                       $("#kabupaten").html(data);
+                                    }
+                                 });
+                              });
+
+                              $('#kurir').change(function() {
+
+                                 //Mengambil value dari option select provinsi asal, kabupaten, kurir kemudian parameternya dikirim menggunakan ajax
+                                 var kab = $('#kabupaten').val();
+                                 var kurir = $('#kurir').val();
+
+                                 $.ajax({
+                                    type: 'POST',
+                                    url: 'tabel-ongkir.php',
+                                    data: {
+                                       'kab_id': kab,
+                                       'kurir': kurir
+                                    },
+                                    success: function(data) {
+                                       //jika data berhasil didapatkan, tampilkan ke dalam element div tampil_ongkir
+                                       $("#tampil_ongkir").html(data);
+
+                                    }
+                                 });
+                              });
+                           </script>
                         </div>
 
                         <div class="col-lg-5">
@@ -125,7 +218,6 @@ if (!isset($_SESSION['pelanggan'])) {
                purchase_units: [{
                   amount: {
                      value: '100',
-                     // Can also reference a variable or function
                   }
                }]
             });
@@ -137,11 +229,11 @@ if (!isset($_SESSION['pelanggan'])) {
                console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
                const transaction = orderData.purchase_units[0].payments.captures[0];
                alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
-               // When ready to go live, remove the alert and show a success message within this page. For example:
-               // const element = document.getElementById('paypal-button-container');
-               // element.innerHTML = '<h3>Thank you for your payment!</h3>';
-               // Or go to another URL:  actions.redirect('thank_you.html');
+               window.location.href = 'print.php';
             });
+         },
+         onCancel: function(data) {
+            window.location.href = 'gagal.php';
          }
       }).render('#paypal-button-container');
    </script>
