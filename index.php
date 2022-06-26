@@ -1,10 +1,8 @@
 <?php
 session_start();
 
-include("../functions.php");
-include("../conn.php");
-
-$user_data = check_login($con);
+include("functions.php");
+include("conn.php");
 
 $result = query("SELECT * FROM produk");
 
@@ -40,13 +38,13 @@ if (isset($_POST["outer"])) {
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Home</title>
+   <title>BENIQ Shop</title>
 
    <!-- css -->
-   <link rel="stylesheet" href="style/home.css">
-   <link rel="stylesheet" href="style/shape.css">
-   <link rel="stylesheet" href="style/slide.css">
-   <link rel="icon" type="image/x-icon" href="../assets/img/logo.png">
+   <link rel="stylesheet" href="home/style/home.css">
+   <link rel="stylesheet" href="home/style/shape.css">
+   <link rel="stylesheet" href="home/style/slide.css">
+   <link rel="icon" type="image/x-icon" href="assets/img/logo.png">
 
    <!-- kit icon -->
    <script src="https://kit.fontawesome.com/ecde83b210.js" crossorigin="anonymous"></script>
@@ -68,10 +66,9 @@ if (isset($_POST["outer"])) {
       <div class="lokasi">
          <h2>Selamat Datang, </h2>
          <h3>
-            <img src="../assets/img/users/<?= $user_data['image']; ?>" alt="foto profil">
-            <?= $user_data['full_name']; ?>
+            <img src="assets/img/users/users.png" alt="foto profil">
+            <a href="login.php">Login</a>
          </h3>
-         <a href="../logout.php">Logout</a>
       </div>
       <div class="searching">
          <form action="" method="POST">
@@ -79,9 +76,9 @@ if (isset($_POST["outer"])) {
             <button class="search" type="submit" name="search"><i class="fa-solid fa-magnifying-glass"></i></button>
          </form>
          <div class="cart-notif">
-            <a href="checkout/keranjang.php"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="login.php"><i class="fa-solid fa-cart-shopping"></i></a>
             &nbsp;&nbsp;
-            <a href="<?= "../profil/profile.php?user_id=" . $user_data['user_id']; ?>"><i class=" fa-solid fa-circle-user"></i></a>
+            <a href="login.php"><i class=" fa-solid fa-circle-user"></i></a>
          </div>
       </div>
    </div>
@@ -91,10 +88,10 @@ if (isset($_POST["outer"])) {
    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner d-flex justify-content-around">
          <div class="carousel-item active">
-            <a href=""><img src="../assets/img/banner1.png" class="w-50 rounded-3 " alt="banner promo"></a>
+            <a href=""><img src="assets/img/banner1.png" class="w-50 rounded-3 " alt="banner promo"></a>
          </div>
          <div class="carousel-item">
-            <a href=""><img src="../assets/img/banner2.png" class="w-50 rounded-3 " alt="banner promo"></a>
+            <a href=""><img src="assets/img/banner2.png" class="w-50 rounded-3 " alt="banner promo"></a>
          </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -114,7 +111,7 @@ if (isset($_POST["outer"])) {
       <h3>Kategori Produk</h3>
       <div class="daftar-kategori scrolling-wrapper">
          <form action="" method="POST">
-            <a href="home.php">Semua produk</a>
+            <a href="index.php">Semua produk</a>
 
             <input type="text" value="Atasan" id="Atasan" name="Atasan" hidden>
             <button type="submit" name="atasan">Atasan</button>
@@ -140,15 +137,15 @@ if (isset($_POST["outer"])) {
       <div class="catalog">
          <?php foreach ($result as $data) : ?>
             <div class="produk">
-               <a href="<?= "detailProduk.php?id_produk=" . $data['id_produk']; ?>">
-                  <img src="img/<?= $data['gambar_produk']; ?>" alt="Foto produk">
+               <a href="login.php">
+                  <img src="home/img/<?= $data['gambar_produk']; ?>" alt="Foto produk">
                </a>
                <div class="produk-info">
                   <h4><?= $data['nama_produk']; ?></h4>
                   <br>
                   <p class="harga">Rp<?= number_format($data['harga'],  0, '', '.'); ?></p>
                   <div class="co">
-                     <a href="checkout/beli.php?id=<?php echo $data['id_produk'] ?>" class="checkout"><i class="fa-solid fa-cart-shopping"></i>Pesan</a>
+                     <a href="login.php" class="checkout"><i class="fa-solid fa-cart-shopping"></i>Pesan</a>
                   </div>
                </div>
             </div>
@@ -165,8 +162,8 @@ if (isset($_POST["outer"])) {
             <p>Create your own style.</p>
             <br>
             <ul>
-               <li><a href="about.php">Tentang Kami</a></li>
-               <li><a href="faq.php">FAQ</a></li>
+               <li><a href="home/about.php">Tentang Kami</a></li>
+               <li><a href="home/faq.php">FAQ</a></li>
                <li><a href="https://api.whatsapp.com/send?phone=62895703340802&text=Hallo%20Kak">Hubungi Kami</a></li>
             </ul>
          </div>
@@ -180,7 +177,7 @@ if (isset($_POST["outer"])) {
             </ul>
          </div>
          <div class="list">
-            <img src="../assets/img/logo.png" alt="logo toko" class="logo">
+            <img src="assets/img/logo.png" alt="logo toko" class="logo">
             <div class="copyrigth">2022 © Kel. 4 Pemweb C081</div>
          </div>
       </div>
@@ -188,7 +185,7 @@ if (isset($_POST["outer"])) {
    <!-- end footer -->
 
    <!-- script -->
-   <script src="../assets/js/bootstrap.bundle.min.js"></script>
+   <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

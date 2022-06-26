@@ -1,4 +1,13 @@
 <?php
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "";
+$dbname = "beniq_db";
+
+if (!$con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname)) {
+
+   die("failed to connect!");
+}
 
 $conn = mysqli_connect('localhost', 'root', '', 'beniq_db');
 

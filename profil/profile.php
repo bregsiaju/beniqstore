@@ -20,6 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="profileStyle.css">
+   <link rel="icon" type="image/x-icon" href="../assets/img/logo.png">
+   <script src="https://kit.fontawesome.com/ecde83b210.js" crossorigin="anonymous"></script>
    <title>My Profile</title>
 </head>
 
@@ -30,16 +32,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             <a href="../home/home.php"><img src="icon-logout.png" alt="Logout-icon" class="logout-icon"></a>
             <h3 class="tulisan_profil">Profile</h3>
             <img src="icon-garis.png" alt="garis" class="garis">
-            <img src="../assets/img/users/<?php echo $user_data['image']; ?>" alt="profile" class="profile">
-            <h3><?php echo $user_data['user_name']; ?></h3>
-            <h3>(<?php echo $user_data['full_name']; ?>)</h3>
-            <p><?php echo $user_data['alamat']; ?></p>
-            <p><?php echo $user_data['hp']; ?></p>
+            <img src="../assets/img/users/<?= $user_data['image']; ?>" alt="profile" class="profile">
+            <h3><?= $user_data['user_name']; ?></h3>
+            <h3>(<?= $user_data['full_name']; ?>)</h3>
+            <p><?= $user_data['alamat']; ?></p>
+            <p><?= $user_data['hp']; ?></p>
 
-            <button type="button">Edit Profile</button>
-            <div class="profile-bawah">
+            <a href="<?= "update_profile.php?user_id=" . $user_data['user_id']; ?>"><button type="button">Edit Profile</button></a>
+            <div class="profile_bawah">
                <h3>Registered on :</h3>
-               <p1><?php echo $user_data['date']; ?></p1>
+               <!-- <a href="<?= "riwayatpesanan.php?full_name=" . $user_data['full_name'] ?>">
+                  <h3>Lihat riwayat pesanan <i class="fa-solid fa-angle-right"></i></h3>
+               </a> -->
+               <p1><?= $user_data['date']; ?></p1>
             </div>
          </div>
       <?php endforeach; ?>

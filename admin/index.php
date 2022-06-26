@@ -2,7 +2,6 @@
 
 session_start();
 
-include("../connection.php");
 include("../functions.php");
 include("../conn.php");
 
@@ -18,6 +17,7 @@ $result = query("SELECT * FROM produk")
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" type="image/x-icon" href="../assets/img/logo.png">
    <title>Halaman Admin</title>
 
    <!-- CSS Boostrap -->
@@ -37,7 +37,7 @@ $result = query("SELECT * FROM produk")
                   <a class="nav-link active" aria-current="page" href="">Kelola Produk</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="#">Kelola Pesanan</a>
+                  <a class="nav-link" href="pesanan/order.php">Kelola Pesanan</a>
                </li>
                <li class="nav-item">
                   <a class="nav-link" href="faq/FAQ.php">Kelola FAQs</a>

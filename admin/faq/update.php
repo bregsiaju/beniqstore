@@ -33,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" type="image/x-icon" href="../../assets/img/logo.png">
    <title>Update FAQ</title>
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
@@ -47,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                <form action="" method="POST">
                   <?php foreach ($result as $data) : ?>
                      <div class="mb-3">
-                        <input type="number" name="faq_id" value="<?= $data['faq_id']; ?>" class="form-control" readonly>
+                        <input type="number" name="faq_id" value="<?= $data['faq_id']; ?>" class="form-control" readonly hidden>
                      </div>
                      <div class="mb-3">
                         <label for="question" class="col-form-label">Pertanyaan</label>

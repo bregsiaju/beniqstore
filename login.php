@@ -2,7 +2,7 @@
 
 session_start();
 
-include("connection.php");
+include("conn.php");
 include("functions.php");
 
 
@@ -53,6 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>Log In</title>
    <link rel="stylesheet" href="assets/css/_signup.css">
+   <link rel="icon" type="image/x-icon" href="assets/img/logo.png">
 </head>
 
 <body>
@@ -63,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
       <div class="form-group">
          <div class="header">
             <h2>WELCOME BACK</h2>
-            <p>don't have an account yet? <a href="signup.php"><b>Register now!</b></a></p>
+            <p>Don't have an account yet? <a href="signup.php"><b>Register now!</b></a></p>
          </div>
          <form method="post" class="sign-up-form" action="">
             <input id="text" type="text" placeholder="Username" name="user_name" autocomplete="off" required autofocus><br>

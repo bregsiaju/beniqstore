@@ -12,7 +12,7 @@ $result = query("SELECT * FROM faq");
    <meta charset="utf-8">
    <title>FAQ</title>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
-   <!-- <link rel="stylesheet" href="style.css"> -->
+   <link rel="icon" type="image/x-icon" href="../../assets/img/logo.png">
 </head>
 
 <body>
@@ -28,7 +28,7 @@ $result = query("SELECT * FROM faq");
                   <a class="nav-link" href="../index.php">Kelola Produk</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="#">Kelola Pesanan</a>
+                  <a class="nav-link" href="../pesanan/order.php">Kelola Pesanan</a>
                </li>
                <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#">Kelola FAQs</a>
@@ -66,8 +66,6 @@ $result = query("SELECT * FROM faq");
       </table>
    </div>
    <br><br>
-
-
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 

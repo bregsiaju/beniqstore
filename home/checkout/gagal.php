@@ -15,13 +15,14 @@ if (!isset($_SESSION['pelanggan'])) {
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Resi</title>
+   <title>History</title>
 
    <!-- css -->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
    <link rel="stylesheet" href="../../assets/css/custom.css">
    <!-- kit icon -->
    <script src="https://kit.fontawesome.com/ecde83b210.js" crossorigin="anonymous"></script>
+   <link rel="icon" type="image/x-icon" href="../../assets/img/logo.png">
    <!-- Jquery -->
    <script src="../../assets/js/jquery-3.6.0.min.js"></script>
    <link rel="stylesheet" href="../style/print.css" media="print">
@@ -39,7 +40,7 @@ if (!isset($_SESSION['pelanggan'])) {
                      <div class="row">
 
                         <div class="col-lg-7">
-                           <h5 class="mb-3" class="text-body"><i class="fa-solid fa"></i></i> BeniqStore Resi </a>
+                           <h5 class="mb-3" class="text-body"><i class="fa-solid fa"></i></i> Riwayat Pesanan</a>
                            </h5>
                            <hr>
                            <div class='d-flex justify-content-between align-items-center mb-4'>

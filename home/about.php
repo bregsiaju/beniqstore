@@ -10,6 +10,7 @@ $result = query("SELECT * FROM anggota");
    <title>Team Section</title>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="style/about.css">
+   <link rel="icon" type="image/x-icon" href="../assets/img/logo.png">
 </head>
 
 <body>
@@ -19,7 +20,7 @@ $result = query("SELECT * FROM anggota");
          <div class="row">
             <div class="section-title">
                <h1>Our Team</h1>
-               <p>Anggota Kelompok 4 BeniqStore Ini Bos</p>
+               <p>*jeng jeng jeng* Inilah Anggota Kelompok 4 🤩🔥</p>
             </div>
          </div>
          <div class="row">

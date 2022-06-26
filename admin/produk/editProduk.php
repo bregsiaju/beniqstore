@@ -47,6 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" type="image/x-icon" href="../../assets/img/logo.png">
    <title>Tambah Produk</title>
 
    <!-- CSS Boostrap -->
@@ -56,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
-   <nav class="navbar                             n   navbar-dark fixed-top" style="background-color: #3f60a0;">
+   <nav class="navbar navbar-dark fixed-top" style="background-color: #3f60a0;">
       <div class="container-fluid px-5">
          <h5 class="text-white"><a href="../index.php">Kelola Produk</a> > Ubah Info Produk</h5>
          <a href="../../logout.php"><button class="btn btn-outline-light" type="submit">Logout</button></a>
@@ -70,8 +71,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                <form action="" method="POST">
                   <?php foreach ($result as $data) : ?>
                      <div class="mb-3">
-                        <label for="id_produk" class="col-form-label">ID Produk</label>
-                        <input type="text" name="id_produk" value="<?= $data['id_produk']; ?>" class="form-control" required readonly>
+                        <label for="id_produk" class="col-form-label" hidden>ID Produk</label>
+                        <input type="text" name="id_produk" value="<?= $data['id_produk']; ?>" class="form-control" required hidden>
                      </div>
                      <div class="mb-3">
                         <label for="nama_produk" class="col-form-label">Nama Produk</label>

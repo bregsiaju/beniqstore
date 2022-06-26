@@ -24,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
    <!-- style css -->
    <link rel="stylesheet" href="style/_details.css">
    <link rel="stylesheet" href="style/shape.css">
+   <link rel="icon" type="image/x-icon" href="../assets/img/logo.png">
    <!-- kit icon -->
    <script src="https://kit.fontawesome.com/ecde83b210.js" crossorigin="anonymous"></script>
    <?php foreach ($result as $data) : ?>

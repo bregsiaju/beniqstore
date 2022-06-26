@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include("connection.php");
+include("conn.php");
 include("functions.php");
 
 
@@ -22,7 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
       mysqli_query($con, $query);
 
-      header("Location: login.php");
+      // header("Location: login.php");
+      echo "<script>alert('Registrasi akun berhasil, silakan login.')</script>";
+      echo "<script>location='login.php'</script>";
       die;
    } else {
       echo "Please enter some valid information!";
@@ -38,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="assets/css/_signup.css">
+   <link rel="icon" type="image/x-icon" href="assets/img/logo.png">
    <title>Sign up</title>
 </head>
 

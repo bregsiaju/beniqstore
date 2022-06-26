@@ -2,7 +2,6 @@
 session_start();
 include("../../conn.php");
 
-
 if (!isset($_SESSION['pelanggan'])) {
    echo "<script>alert('error');</script>";
    echo "<script>location='../../login.php';</script>";
@@ -15,19 +14,22 @@ if (!isset($_SESSION['pelanggan'])) {
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Resi</title>
+   <title>Invoice</title>
 
    <!-- css -->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
    <link rel="stylesheet" href="../../assets/css/custom.css">
    <!-- kit icon -->
    <script src="https://kit.fontawesome.com/ecde83b210.js" crossorigin="anonymous"></script>
+   <link rel="icon" type="image/x-icon" href="../../assets/img/logo.png">
    <!-- Jquery -->
    <script src="../../assets/js/jquery-3.6.0.min.js"></script>
    <link rel="stylesheet" href="../style/print.css" media="print">
 </head>
 
 <body>
+   <?php $namapembeli = $_SESSION['users']['full_name']; ?>
+   <?php $hp = $_SESSION['users']['hp']; ?>
    <script src="https://www.paypal.com/sdk/js?client-id=AfA2E9dq-AsFiL7_fZKqTR0R_BUx8lqZErrChqQqsI4ScQ2oOd4p3ofCdjNWoBalAH7rX3MFrgzgZpVG&currency=USD"></script>
    <section class="h-100 h-custom" style="background-color: #eee;">
       <div class="container py-5 h-100">
@@ -39,8 +41,7 @@ if (!isset($_SESSION['pelanggan'])) {
                      <div class="row">
 
                         <div class="col-lg-7">
-                           <h5 class="mb-3" class="text-body"><i class="fa-solid fa"></i></i> BENIQ Shop Invoice </a>
-                           </h5>
+                           <h5 class="mb-3" class="text-body"><a href="../home.php"><i class="fa-solid fa-arrow-left-long"></i></a> BENIQ Shop Invoice</h5>
                            <hr>
                            <div class='d-flex justify-content-between align-items-center mb-4'>
                               <div>
@@ -67,8 +68,8 @@ if (!isset($_SESSION['pelanggan'])) {
                                           </div>
                                           <div class="ms-4">
                                              <h5><?= $pecah['nama_produk']; ?></h5>
+                                             <?php $produk = $pecah['nama_produk']; ?>
                                              <p class="small mb-0"><?= $pecah['kategori']; ?></p>
-                                             <?php $_SESSION['kategori'] = $pecah['kategori']; ?>
                                           </div>
                                        </div>
                                        <div class="d-flex flex-row align-items-center">
@@ -82,7 +83,18 @@ if (!isset($_SESSION['pelanggan'])) {
                                     </div>
                                  </div>
                               </div>
-                              <?php $totalbelanja += $subharga; ?>
+                              <?php
+                              $totalbelanja += $subharga;
+
+                              date_default_timezone_set('Asia/Jakarta');
+                              $date = date('Y-m-d H:i:s');
+
+                              if ($conn->connect_error) {
+                                 die("Connection failed: " . $conn->connect_error);
+                              }
+                              $ambil = $conn->query("INSERT INTO pembelianbaru (namapembeli, hp, harga, produk, jumlah, tgl_pembelian)
+                              VALUES ('$namapembeli','$hp','$subharga','$produk', '$jumlah', '$date') ");
+                              ?>
                            <?php endforeach ?>
                         </div>
 

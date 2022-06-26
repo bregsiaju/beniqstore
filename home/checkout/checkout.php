@@ -22,6 +22,7 @@ if (!isset($_SESSION['pelanggan'])) {
    <link rel="stylesheet" href="../../assets/css/custom.css">
    <!-- kit icon -->
    <script src="https://kit.fontawesome.com/ecde83b210.js" crossorigin="anonymous"></script>
+   <link rel="icon" type="image/x-icon" href="../../assets/img/logo.png">
    <!-- Jquery -->
    <script src="../../assets/js/jquery-3.6.0.min.js"></script>
    <script src="../../assets/js/storage.js"></script>

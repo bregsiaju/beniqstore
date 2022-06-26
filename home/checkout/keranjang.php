@@ -17,6 +17,7 @@ require '../../conn.php';
    <link rel="stylesheet" href="../../assets/css/custom.css">
    <!-- kit icon -->
    <script src="https://kit.fontawesome.com/ecde83b210.js" crossorigin="anonymous"></script>
+   <link rel="icon" type="image/x-icon" href="../../assets/img/logo.png">
 </head>
 
 <body>
@@ -75,7 +76,7 @@ require '../../conn.php';
                            <div class="card bg-custom text-white rounded-3">
                               <div class="card-body">
                                  <div class="d-flex justify-content-between align-items-center mb-4">
-                                    <h5 class="mb-0">Supported by UPN Veteran Jatim</h5>
+                                    <h5 class="mb-0">BENIQ Shop</h5>
                                  </div>
                                  <hr class="my-4">
 
