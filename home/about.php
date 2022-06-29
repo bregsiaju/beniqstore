@@ -9,7 +9,7 @@ $result = query("SELECT * FROM anggota");
 <head>
    <title>Team Section</title>
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="style/about.css">
+   <link rel="stylesheet" href="style/aboutus.css">
    <link rel="icon" type="image/x-icon" href="../assets/img/logo.png">
 </head>
 
